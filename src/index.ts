@@ -4,6 +4,7 @@ import connectDB from "./config/db";
 import authRoutes from "./routes/auth.routes";
 import cors from "cors";
 import projectRoutes from "./routes/project.routes";
+import taskRoutes from "./routes/task.routes";
 
 dotenv.config();
 const app = express();
@@ -21,6 +22,7 @@ app.use(cors({
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectRoutes);
+app.use("/api/tasks", taskRoutes);
 
 
 const port = process.env.PORT || 5000;
